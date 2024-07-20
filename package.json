@@ -1,0 +1,9 @@
+{
+  "name": "serverlesswp-wordpress-starter",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "dependencies": {
+    "serverlesswp": "^0.1.2"
+  }
+}
