@@ -20,6 +20,9 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
+// https://uysalmustafa.com/2023/11/02/installing-wordpress-with-tidb/
+define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);
+
 if (isset($_ENV['DATABASE'])) {
   define( 'DB_NAME', $_ENV['DATABASE'] );
 }
@@ -43,7 +46,8 @@ if (isset($_ENV['HOST'])) {
 define( 'DB_CHARSET', 'utf8' );
 
 /** The database collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
+//define( 'DB_COLLATE', '' );
+define( 'DB_COLLATE', 'utf8mb4_general_ci' );
 
 /**#@+
  * Authentication unique keys and salts.
