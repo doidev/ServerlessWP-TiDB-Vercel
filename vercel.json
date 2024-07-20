@@ -1,16 +1,22 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/api/index.js" }
-    ],
-    "functions": {
-        "api/index.js": {
-          "memory": 1024,
-          "includeFiles": "wp/**"
+    "build": {
+        "env": {
+            "NODEJS_AWS_HANDLER_NAME": "handler"
         }
     },
-    "build": {
-      "env": {
-        "NODEJS_AWS_HANDLER_NAME": "handler"
-      }
-    }
+    "functions": {
+        "api/index.js": {
+            "includeFiles": "wp/**",
+            "memory": 1024
+        }
+    },
+    "regions": [
+        "sin1"
+    ],
+    "rewrites": [
+        {
+            "destination": "/api/index.js",
+            "source": "/(.*)"
+        }
+    ]
 }

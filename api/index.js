@@ -4,6 +4,7 @@ const { validate } = require('../util/install.js');
 const { setup } = require('../util/directory.js');
 
 export const runtime = 'edge'; // 'nodejs' is the default https://github.com/mitchmac/ServerlessWP/discussions/31
+export const preferredRegion = ['sin1','hkg1']; //https://github.com/mitchmac/ServerlessWP/issues/63
 
 // This is where all requests to WordPress are routed through. See vercel.json or netlify.toml for the redirection rules.
 exports.handler = async function (event, context, callback) {
